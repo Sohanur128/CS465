@@ -6,6 +6,7 @@ var logger = require('morgan');
 
 var indexRouter = require('./app_server/routes/index'); //new added
 var travelRouter = require('./app_server/routes/travel'); //added 
+require('./app_server/models/db'); //app.js to Connect Database
 
 
 var app = express();
