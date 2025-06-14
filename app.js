@@ -4,20 +4,18 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
-var indexRouter = require('./app_server/routes/index'); //new added
-var travelRouter = require('./app_server/routes/travel'); //added 
-require('./app_server/models/db'); //app.js to Connect Database
+var indexRouter = require('./app_server/routes/index');
+var travelRouter = require('./app_server/routes/travel');
 
+require('./app_api/models/db'); // Connect to API database
+const apiRouter = require('./app_api/routes/index'); // API routes
 
 var app = express();
 
-// view engine setup
+// View engine setup
 app.set('views', path.join(__dirname, 'app_server', 'views'));
 app.set('view engine', 'hbs');
 
-
-
-// register handlebars partials
 const hbs = require('hbs');
 hbs.registerPartials(__dirname + '/app_server/views/partials');
 
@@ -27,22 +25,21 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter); //added
-app.use('/travel', travelRouter); //added 
+// Routes
+app.use('/', indexRouter);
+app.use('/travel', travelRouter);
+app.use('/api', apiRouter); // API route - placed BEFORE 404 handler
 
-
-// catch 404 and forward to error handler
+// Catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
 });
 
-// error handler
+// Error handler
 app.use(function(err, req, res, next) {
-  // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
 
-  // render the error page
   res.status(err.status || 500);
   res.render('error');
 });
