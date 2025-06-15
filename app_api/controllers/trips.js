@@ -1,26 +1,35 @@
 const mongoose = require('mongoose');
 const Trip = require('../models/travlr');
-const Model = mongoose.model('trips');
 
-// GET: trips - lists all trips
+// GET: /api/trips – List all trips
 const tripsList = async (req, res) => {
-  const q = await Model.find({}).exec();
+  try {
+    const trips = await Trip.find().exec();
 
-  if (!q) {
-    return res.status(404).json({ "message": "no trips found" });
-  } else {
-    return res.status(200).json(q);
+    if (!trips || trips.length === 0) {
+      return res.status(404).json({ message: 'No trips found' });
+    }
+
+    return res.status(200).json(trips);
+  } catch (err) {
+    console.error('Error retrieving trips:', err.message);
+    return res.status(500).json({ message: 'Internal server error' });
   }
 };
 
-// GET: trips/:tripCode - single trip
+// GET: /api/trips/:tripCode – Find a single trip by code
 const tripsFindByCode = async (req, res) => {
-  const q = await Model.find({ code: req.params.tripCode }).exec();
+  try {
+    const trip = await Trip.findOne({ code: req.params.tripCode }).exec();
 
-  if (!q) {
-    return res.status(404).json({ "message": "trip not found" });
-  } else {
-    return res.status(200).json(q[0]);
+    if (!trip) {
+      return res.status(404).json({ message: `Trip with code ${req.params.tripCode} not found` });
+    }
+
+    return res.status(200).json(trip);
+  } catch (err) {
+    console.error(`Error finding trip ${req.params.tripCode}:`, err.message);
+    return res.status(500).json({ message: 'Internal server error' });
   }
 };
 
