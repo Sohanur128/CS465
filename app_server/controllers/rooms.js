@@ -1,6 +1,6 @@
 var fs = require('fs');
 
 module.exports.rooms = function (req, res) {
-  
-  res.render('rooms');
+  var rooms = JSON.parse(fs.readFileSync('./data/rooms.json', 'utf8'));
+  res.render('rooms', { title: 'rooms', rooms });
 };

@@ -1,6 +1,6 @@
 var fs = require('fs');
 
 module.exports.meals = function (req, res) {
-  
-  res.render('meals');
+  var meals = JSON.parse(fs.readFileSync('./data/meals.json', 'utf8'));
+  res.render('meals', { title: 'meals', meals });
 };
