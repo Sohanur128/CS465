@@ -6,7 +6,11 @@ var logger = require('morgan');
 
 var indexRouter = require('./app_server/routes/index'); //new added
 var travelRouter = require('./app_server/routes/travel'); //added 
-
+var aboutRouter = require('./app_server/routes/about'); //added 
+//var contactRouter = require('./app_server/routes/contact'); //added 
+//var mealsRouter = require('./app_server/routes/meals'); //added 
+//var newsRouter = require('./app_server/routes/news'); //added 
+//var roomsRouter = require('./app_server/routes/rooms'); //added 
 
 var app = express();
 
@@ -28,6 +32,12 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter); //added
 app.use('/travel', travelRouter); //added 
+app.use('/about', aboutRouter); //added 
+//app.use('/contact', contactRouter); //added 
+//app.use('/meals', mealsRouter); //added 
+//app.use('/news', newsRouter); //added 
+//app.use('/rooms', roomsRouter); //added 
+
 
 
 // catch 404 and forward to error handler
