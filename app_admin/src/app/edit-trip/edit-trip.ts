@@ -65,9 +65,10 @@ export class EditTrip implements OnInit {
 
           // Convert ISO date (e.g., "2022-01-19T00:00:00.000Z") 
           // to "yyyy-MM-dd" which HTML date input accepts
-          if (this.trip.start) {
-            this.trip.start = this.trip.start.split('T')[0];
-          }
+          //if (this.trip.start) {
+           // this.trip.start = this.trip.start.split('T')[0];
+           //console.log(this.trip.start);
+          //}
 
           // Load the trip data into the form
           this.editForm.patchValue(this.trip);

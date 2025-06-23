@@ -20,13 +20,12 @@ export class TripData {
   }
 
   getTrip(tripCode: string): Observable<Trip[]> {
-  // console.log('Inside TripDataService::getTrips');
-  return this.http.get<Trip[]>(this.url + '/' + tripCode);
-}
+    // console.log('Inside TripDataService::getTrips');
+    return this.http.get<Trip[]>(this.url + '/' + tripCode);
+  }
 
-updateTrip(formData: Trip): Observable<Trip> {
-  // console.log('Inside TripDataService::addTrips');
-  return this.http.put<Trip>(this.url + '/' + formData.code, formData);
-}
-
+  updateTrip(formData: Trip): Observable<Trip> {
+    // console.log('Inside TripDataService::addTrips');
+    return this.http.put<Trip>(this.url + '/' + formData.code, formData);
+  }
 }
