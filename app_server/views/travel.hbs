@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>{{title}}</title>
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+<body>
+  <div id="background">
+    <div id="page">
+      {{> header }}
+
+      <div id="contents">
+        <div class="box">
+          <div>
+            <div class="body">
+              <h1>Travel</h1>
+              <ul id="sites">
+                {{#each trips}}
+                <li>
+                  <a href="http://localhost:3000/api/trips/{{this.code}}">
+                    <img src="{{this.image}}" alt="{{this.name}}">
+                  </a>
+                  <h2>
+                    <a href="http://localhost:3000/api/trips/{{this.code}}">
+                      {{this.name}}
+                    </a>
+                  </h2>
+                  <p>{{this.description}}</p>
+                </li>
+                {{/each}}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {{> footer }}
+    </div>
+  </div>
+</body>
+</html>
