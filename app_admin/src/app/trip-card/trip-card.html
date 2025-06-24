@@ -1,5 +1,3 @@
-
-
 <div class="card">
   <div class="card-header">{{ trip.name }}</div>
   <img src="assets/images/{{ trip.image }}"
@@ -13,10 +11,9 @@
     </p>
     <p class="card-text" [innerHTML]="trip.description">
     </p>
-    <div>
+    <div *ngIf="isLoggedIn()">
         <button (click)="editTrip(trip)" class="btn btn-info">Edit Trip</button>
     </div>
-
   </div>
 </div>
 

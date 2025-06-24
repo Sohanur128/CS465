@@ -7,6 +7,8 @@ import { TripCard } from '../trip-card/trip-card';
 import { Trip } from '../models/trip'; 
 import { TripData } from '../services/trip-data'; 
 import { Router } from '@angular/router';
+import { AuthService } from '../services/authentication'; // Module 7
+
 
 @Component({
   selector: 'app-trip-listing',
@@ -19,12 +21,14 @@ export class TripListing implements OnInit {
   trips: Array<any> = trips;
   message: string = '';
 
-constructor(
+constructor( //updated M7
   private tripData: TripData,
-  private router: Router
+  private router: Router,
+  private authService: AuthService
 ) {
   console.log('trip-listing constructor');
 }
+
 
 public addTrip(): void {
   this.router.navigate(['add-trip']);
@@ -47,7 +51,10 @@ public addTrip(): void {
       } 
     }); 
   }
-
+// updated for M7
+  public isLoggedIn(): boolean {
+  return this.authService.isLoggedIn();
+}
   ngOnInit(): void { 
     console.log('ngOnInit'); 
     this.getStuff();
