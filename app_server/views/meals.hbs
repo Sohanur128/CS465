@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<!-- Website template by freewebsitetemplates.com -->
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Foods - Travlr Getaways Website Template</title>
+	<link rel="stylesheet" href="css/style.css" type="text/css">
+</head>
+<body>
+	<div id="background">
+		<div id="page">
+			{{>header}}
+			<div id="contents">
+				<div class="box">
+					<div>
+						<div class="body">
+							<h1>Meals</h1>
+							<ul id="foods">
+								{{#each meals}}
+								<li>
+									<h2><a href="/meals">{{this.name}}</a></h2>
+									<div class="infos">
+										<a href="/meals"><img src="{{this.image}}" alt="Img" height="169" width="780"><span class="cover"></span></a>
+										<p>
+											<span>{{this.description1}}</span> {{this.description2}}
+										</p>
+									</div>
+								</li>
+								{{/each}}
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		{{>footer}}
+	</div>
+</body>
+</html>
