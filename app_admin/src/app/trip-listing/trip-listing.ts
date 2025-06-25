@@ -12,7 +12,7 @@ import { AuthService } from '../services/authentication'; // Module 7
 
 @Component({
   selector: 'app-trip-listing',
-  imports: [NgFor, CurrencyPipe, CommonModule, TripCard],
+  imports: [NgFor, CommonModule, TripCard],
   templateUrl: './trip-listing.html',
   styleUrls: ['./trip-listing.css'],
   providers: [TripData]
