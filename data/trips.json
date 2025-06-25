@@ -1,32 +1,20 @@
 [
   {
-    "code": "GAL123",
     "name": "Gale Reef",
-    "length": "7",
-    "start": "2025-06-15T00:00:00.000Z",
-    "resort": "Gale Resort",
-    "perPerson": "1200",
     "image": "/images/reef1.jpg",
-    "description": "Trip to Gale Reef - JSON live data"
+    "description1": "Sed et augue lorem. In sit amet placerat arcu. Integer vitae est eget ligula tempor ultricies.",
+    "description2": "Sed consequat libero ut turpis venenatis, nec iaculis justo tincidunt."
   },
   {
-    "code": "DAW456",
     "name": "Dawson’s Reef",
-    "length": "5",
-    "start": "2025-07-01T00:00:00.000Z",
-    "resort": "Dawson Resort",
-    "perPerson": "1000",
     "image": "/images/reef2.jpg",
-    "description": "Trip to Dawson’s Reef - JSON live data"
+    "description1": "Integer magna leo, posuere et dignissim vitae, vulputate at est.",
+    "description2": "Morbi aliquet viverra placerat. Integer nec dui ac magna."
   },
   {
-    "code": "CLA789",
     "name": "Claire’s Reef",
-    "length": "4",
-    "start": "2025-08-01T00:00:00.000Z",
-    "resort": "Claire’s Resort",
-    "perPerson": "950",
     "image": "/images/reef3.jpg",
-    "description": "Trip to Claire’s Reef - JSON live data"
+    "description1": "Donec sed felis risus. Nulla facilisi. Vestibulum vitae ante vitae eros.",
+    "description2": "Vulputate eget libero. In hac habitasse platea dictumst."
   }
 ]

@@ -44,7 +44,6 @@ export class LoginComponent implements OnInit {
       name: this.credentials.name,
       email: this.credentials.email
     } as User;
-
     this.authenticationService.login(newUser, this.credentials.password);
 
     if (this.authenticationService.isLoggedIn()) {
