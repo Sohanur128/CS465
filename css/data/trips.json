@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Gale Reef",
+    "image": "/images/reef1.jpg",
+    "description1": "Sed et augue lorem. In sit amet placerat arcu. Integer vitae est eget ligula tempor ultricies.",
+    "description2": "Sed consequat libero ut turpis venenatis, nec iaculis justo tincidunt."
+  },
+  {
+    "name": "Dawson’s Reef",
+    "image": "/images/reef2.jpg",
+    "description1": "Integer magna leo, posuere et dignissim vitae, vulputate at est.",
+    "description2": "Morbi aliquet viverra placerat. Integer nec dui ac magna."
+  },
+  {
+    "name": "Claire’s Reef",
+    "image": "/images/reef3.jpg",
+    "description1": "Donec sed felis risus. Nulla facilisi. Vestibulum vitae ante vitae eros.",
+    "description2": "Vulputate eget libero. In hac habitasse platea dictumst."
+  }
+]
